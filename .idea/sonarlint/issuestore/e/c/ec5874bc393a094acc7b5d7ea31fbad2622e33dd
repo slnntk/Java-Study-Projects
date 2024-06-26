@@ -1,0 +1,8 @@
+
+†	java:S112."FDefine and throw a dedicated exception instead of using a generic one.(Ò‚ÒéüÿÿÿÿJ$4519f86c-82aa-4da0-9a95-dc431de07876
+µ
+java:S1192"yDefine a constant instead of duplicating this literal "========================================================" 3 times.(ùõ¶J$6c5a3c49-d137-4857-ac02-bc6a4870b018
+´
+java:S1130"yRemove the declaration of thrown exception 'java.lang.IllegalAccessException', as it cannot be thrown from method's body.(Ô·^J$1efbda74-42c5-4ce4-a33f-2e900b08ec1a
+h
+java:S3011",This accessibility update should be removed.(˜ÂÓ˜J$7801ecf3-0e3f-458a-bdb9-6dedca6bfb1d

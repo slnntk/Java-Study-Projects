@@ -1,0 +1,9 @@
+
+®
+java:S1319"fThe type of "grades" should be an interface such as "List" rather than the implementation "ArrayList".(¤ïîÚûÿÿÿÿ8¸ÇÍ¬…2J$6d6932fe-aa41-49c1-a399-90a28ebfe408
+¸
+java:S1319Y"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(àŒùÿÿÿÿ8¸ÇÍ¬…2J$bc2a44a2-77e0-40b9-a739-57df5161de15
+®
+java:S1319]"fThe type of "grades" should be an interface such as "List" rather than the implementation "ArrayList".(€µ½Ğúÿÿÿÿ8¸ÇÍ¬…2J$3f5c32e9-11ee-44cd-b150-ea73c5cfb057
+r	java:S106+"+Replace this use of System.out by a logger.(ü¿©¹ıÿÿÿÿ8ÁÇÍ¬…2J$cc6f6147-cc5f-4ef1-b2f6-a073f564b390
+m	java:S106,"+Replace this use of System.out by a logger.(ÆÀûı8ÁÇÍ¬…2J$ee9f642e-2399-46cd-b635-896522d810e6
