@@ -1,22 +1,24 @@
 import factory.CoinFactory;
 import domain.Coin;
 
+import java.util.logging.Logger;
+
 public class Main {
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
+
     public static void main(String[] args) {
+        createAndPrintCoin("Real");
+        createAndPrintCoin("Dollar");
+        createAndPrintCoin("x");
+    }
+
+    private static void createAndPrintCoin(String coinName) {
         try {
-            Coin real = CoinFactory.build("Real")
-                    .orElseThrow(() -> new IllegalArgumentException("Coin not found"));
-            System.out.println(real.getSymbol()); // BRL
-
-            Coin dollar = CoinFactory.build("Dollar")
-                    .orElseThrow(() -> new IllegalArgumentException("Coin not found"));
-            System.out.println(dollar.getSymbol()); // USD
-
-            Coin unknown = CoinFactory.build("x")
-                    .orElseThrow(() -> new IllegalArgumentException("Coin not found"));
-            System.out.println(unknown.getSymbol());
+            Coin coin = CoinFactory.build(coinName)
+                    .orElseThrow(() -> new IllegalArgumentException("Coin not found: " + coinName));
+            System.out.println(coin.getSymbol());
         } catch (IllegalArgumentException e) {
-            System.err.println(e.getMessage());
+            logger.severe(e.getMessage());
         }
     }
 }
