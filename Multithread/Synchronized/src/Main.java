@@ -19,20 +19,24 @@ public class Main {
         thread4.start();
     }
 
-    public static class MyRunnable implements Runnable{
-//        static Object Lock1 = new Object();
-//        static Object Lock2 = new Object();
+    public static void print(){
+        synchronized (Main.class){
+            i++;
+            Thread thread = Thread.currentThread();
+            System.out.println("Thread name: " + thread.getName() + " i: " + i);
+        }
+    }
 
+    public static class MyRunnable implements Runnable{
         @Override
         public void run() {
-            synchronized (this){
-                i++;
-                Thread thread = Thread.currentThread();
-                System.out.println("Thread name: " + thread.getName() + " i: " + i);
-            }
+            print();
         }
     }
 }
+
+//        static Object Lock1 = new Object();
+//        static Object Lock2 = new Object();
 
 //@Override
 //public void run() {  // Implementamos o synchronized dentro de um bloco de código, para que ele seja sincronizado.
