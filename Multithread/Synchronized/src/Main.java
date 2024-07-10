@@ -20,21 +20,30 @@ public class Main {
     }
 
     public static class MyRunnable implements Runnable{
-        static Object Lock1 = new Object();
-        static Object Lock2 = new Object();
+//        static Object Lock1 = new Object();
+//        static Object Lock2 = new Object();
 
         @Override
-        public void run() {  // Implementamos o synchronized dentro de um bloco de código, para que ele seja sincronizado.
-            synchronized (Lock2){ // só podemos executar um método sincronizado por vez (tiramos o paralelismo )
-                i++; // como cada thread vai esperar o método anterior terminar, tiramos a concorrencia.
-                Thread thread = Thread.currentThread();
-                System.out.println("Thread name: " + thread.getName() + " i: " + i);
-            }
-            synchronized (Lock2){ // só podemos executar um método sincronizado por vez (tiramos o paralelismo )
-                i++; // como cada thread vai esperar o método anterior terminar, tiramos a concorrencia.
+        public void run() {
+            synchronized (this){
+                i++;
                 Thread thread = Thread.currentThread();
                 System.out.println("Thread name: " + thread.getName() + " i: " + i);
             }
         }
     }
 }
+
+//@Override
+//public void run() {  // Implementamos o synchronized dentro de um bloco de código, para que ele seja sincronizado.
+//    synchronized (Lock2){ // só podemos executar um método sincronizado por vez (tiramos o paralelismo )
+//        i++; // como cada thread vai esperar o método anterior terminar, tiramos a concorrencia.
+//        Thread thread = Thread.currentThread();
+//        System.out.println("Thread name: " + thread.getName() + " i: " + i);
+//    }
+//    synchronized (Lock2){ // só podemos executar um método sincronizado por vez (tiramos o paralelismo )
+//        i++; // como cada thread vai esperar o método anterior terminar, tiramos a concorrencia.
+//        Thread thread = Thread.currentThread();
+//        System.out.println("Thread name: " + thread.getName() + " i: " + i);
+//    }
+//}
