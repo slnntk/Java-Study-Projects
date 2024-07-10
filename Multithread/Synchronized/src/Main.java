@@ -1,6 +1,6 @@
 public class Main {
 
-    private static int i = -1;
+    private static int i = 0;
 
     public static void main(String[] args) {
         MyRunnable runnable = new MyRunnable();
@@ -19,35 +19,18 @@ public class Main {
         thread4.start();
     }
 
-    public static void print(){
-        synchronized (Main.class){
-            i++;
-            Thread thread = Thread.currentThread();
-            System.out.println("Thread name: " + thread.getName() + " i: " + i);
-        }
-    }
-
     public static class MyRunnable implements Runnable{
         @Override
         public void run() {
-            print();
+            int j;
+            synchronized (Main.class){
+                i++;
+                j = i * 2;
+            }
+            System.out.println(i + " " + j);
+            double jE100 = Math.pow(j, 100);
+            double sqrt = Math.sqrt(jE100);
+            System.out.println(sqrt);
         }
     }
 }
-
-//        static Object Lock1 = new Object();
-//        static Object Lock2 = new Object();
-
-//@Override
-//public void run() {  // Implementamos o synchronized dentro de um bloco de código, para que ele seja sincronizado.
-//    synchronized (Lock2){ // só podemos executar um método sincronizado por vez (tiramos o paralelismo )
-//        i++; // como cada thread vai esperar o método anterior terminar, tiramos a concorrencia.
-//        Thread thread = Thread.currentThread();
-//        System.out.println("Thread name: " + thread.getName() + " i: " + i);
-//    }
-//    synchronized (Lock2){ // só podemos executar um método sincronizado por vez (tiramos o paralelismo )
-//        i++; // como cada thread vai esperar o método anterior terminar, tiramos a concorrencia.
-//        Thread thread = Thread.currentThread();
-//        System.out.println("Thread name: " + thread.getName() + " i: " + i);
-//    }
-//}
